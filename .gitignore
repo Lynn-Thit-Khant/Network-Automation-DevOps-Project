@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+*.env
+
+# Secrets and keys
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Backup outputs
+backups/*.txt
+backups/*.cfg
+
+# OS files
+.DS_Store
+Thumbs.db

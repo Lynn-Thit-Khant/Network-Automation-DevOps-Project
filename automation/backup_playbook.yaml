@@ -1,0 +1,16 @@
+---
+- name: Backup Cisco router running configuration
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: Collect running configuration
+      ios_command:
+        commands:
+          - show running-config
+      register: config_output
+
+    - name: Save running configuration to backup file
+      copy:
+        content: "{{ config_output.stdout[0] }}"
+        dest: "./backups/{{ inventory_hostname }}_running-config.txt"
